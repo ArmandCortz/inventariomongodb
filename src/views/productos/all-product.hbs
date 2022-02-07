@@ -1,0 +1,143 @@
+<head>
+    <title>Productos</title>
+</head>
+
+
+<div class="row mt-2 mr-1">
+    <div class="container mr-1">
+        <div class="row form-group justify-content-center text-center">
+
+            <div class="col-md-12 formulario">
+                <div class="header-form">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" aria-current="page" href="#">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table caption-top table-info" id="table">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre Producto</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">precio</th>
+                            <th scope="col">imagen</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Proveedor</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each productos}}
+                        <tr>
+                            <th scope="row">{{ @index }}</th>
+                            <td>{{ this.nombre }}</td>
+                            <td>{{ this.descripcion }}</td>
+                            <td>${{ this.precio }}</td>
+                            <td>
+                                <img class="img-fluid" width="50" src="./upload/{{ this.imagen }}" alt="">
+                            </td>
+                            <td>{{ this.categoria.nombre }}</td>
+                            <td>{{ this.proveedor.nombre }}</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <a href="/productos/edit/{{this._id}}" class="btn btn-primary btn-sm"><i
+                                            class="far fa-edit"></i></a>
+                                    <form action="/productos/delete/{{this._id}}?_method=DELETE" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-sm"><i
+                                                class="far fa-trash-alt"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
+                <button type="button" class="btn-close btn-info" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="far fa-times-circle"></i></button>
+            </div>
+            <div class="modal-body">
+                <form action="productos/new" method="POST" enctype="multipart/form-data" class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputEmail4" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" id="inputEmail4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Nombre Proveedor</label>
+                        <input type="text" name="nombre_prov" class="form-control" id="inputPassword4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Categoria</label>
+                        <input type="text" name="nombre_cat" class="form-control" id="inputPassword4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Detalles de Producto</label>
+                        <textarea name="descripcion" class="form-control" required></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Dirección</label>
+                        <textarea name="direccion_prov" class="form-control" required></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Descripción</label>
+                        <input type="text" name="descripcion_cat" class="form-control" id="inputPassword4" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputEmail4" class="form-label">Modelo</label>
+                        <input type="text" name="modelo" class="form-control" id="inputEmail4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Correo</label>
+                        <input type="email" name="email_prov" class="form-control" id="inputPassword4" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputAddress" class="form-label">Cantidad</label>
+                        <input type="number" name="cantidad" min="1" class="form-control" id="inputAddress" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputAddress" class="form-label">Precio</label>
+                        <input type="number" name="precio" min="1" class="form-control" id="inputAddress" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputAddress" class="form-label">Telefono</label>
+                        <input type="number" name="telefono_prov" class="form-control" id="inputAddress" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="formFile" class="form-label">imagen </label>
+                        <input class="form-control" name="imagen" type="file" id="formFile" required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<head>
+    <title>Registro</title>
+</head>
+<div class="row">
+    <form action="/users/signup" method="POST" class="container pt-5 mt-5 mr-1">
+        <div class="row form-group justify-content-center text-center">
+            <div class="col-md-5 formulario">
+                <div class="form-group text-center">
+                    <h1 class="text-ligh">Agregar Usuario</h1>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+
+                                <input name="name" value="{{name}}" type="text" class="form-control" placeholder="Nombre" aria-label="nombre">
+                            </div>
+                            <div class="col">
+
+                                <input value="{{email}}" name="email" type="mail" class="form-control" placeholder="Correo" aria-label="Last name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div class="row">
+                        <div class="col">
+
+                            <input name="last_name" value="{{last_name}}" type="text" class="form-control" placeholder="Apellido" aria-label="apellido">
+                        </div>
+                        <div class="col">
+
+                            <input type="password" value="{{password}}" name="password" class="form-control" placeholder="Contraseña" aria-label="contraseña">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <input type="tel" name="phone" class="form-control" placeholder="Telefono" aria-label="apellido">
+                        </div>
+                        <div class="col">
+
+                            <input type="password" value="{{confirm_password}}" name="confirm_password" class="form-control" placeholder="Confirmar contraseña" aria-label="contraseña">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div> 
+                <a href="/users" class="btn btn-danger ">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Regristrate</button></div>
+
+            </div>
+        </div>
+    </form>
+</div>

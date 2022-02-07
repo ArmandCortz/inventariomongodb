@@ -1,0 +1,32 @@
+<head>
+    <title>Usuarios</title>
+</head>
+    <div class="row">
+        <form action="/user/update/{{user._id}}?_method=PUT" method="POST" class="container pt-5 mt-5 mr-1">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="row form-group justify-content-center text-center">
+                <div class="col-md-5 formulario">
+                    <div class="form-group text-center"><br>
+                        <h1 class="text-ligh">Editar Usuario</h1>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                    
+                                    <input name="name" value="{{user.name}}" type="text" class="form-control" placeholder="Nombre"
+                                        aria-label="nombre">
+                                </div>
+                                <div class="col">
+                    
+                                    <input value="{{user.email}}" name="email" type="mail" class="form-control" placeholder="Email"
+                                        aria-label="Last name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/users" class="btn btn-danger btn-block">Cancelar</a>
+                    <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                    
+                </div>
+            </div>
+        </form>
+    </div> 

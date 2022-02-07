@@ -1,0 +1,23 @@
+<head>
+    <title>Login</title>
+</head>
+<div class="row">
+    <form action="/users/signin" method="POST" class="container pt-5 mt-5 mr-1">
+        <div class="row form-group justify-content-center text-center">
+        <div class="col-md-4 formulario">
+            <div class="form-group text-center">
+            <h1 class="text-ligh">Iniciar Sesión</h1>
+            </div>
+            <div>
+            <label for="usuario">Ingrese su usuario</label>
+            <input name="email" type="email" value="{{email}}" class="form-control text-center letrapequeña" id="usuario" aria-describedby="emailHelp" placeholder="Usuario">
+            </div>
+            <div class="form-group text-center">
+            <label for="contraseña">Contraseña</label>
+            <input name="password" type="password" value="{{password}}" class="form-control text-center letrapequeña" id="contraseña" placeholder="Contraseña">
+            </div><br>
+            <div> <button type="submit" class="btn btn-primary">Ingresar</button></div>
+        </div>
+        </div>
+    </form>
+</div>

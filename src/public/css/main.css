@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+h1, h2, h3,th{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+}
+p,a,h4,h5,h6,td{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	background-image: radial-gradient(circle at 31.7% 118.3%, #ffe6c5 0, #ffe7c3 6.25%, #fce9c3 12.5%, #f7ebc3 18.75%, #f1ecc3 25%, #ebeec5 31.25%, #e6efc7 37.5%, #e0f1ca 43.75%, #daf2cd 50%, #d4f3d1 56.25%, #cff4d5 62.5%, #c9f5da 68.75%, #c5f6df 75%, #c0f6e4 81.25%, #bcf6e9 87.5%, #b9f7ee 93.75%, #b7f7f3 100%);
+	background-repeat: no-repeat;	
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.formulario {
+	background: rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 30px rgba(0, -0, -0, -0.568);
+}
+
+.letrapequeña{
+	font-size: 13px;
+}

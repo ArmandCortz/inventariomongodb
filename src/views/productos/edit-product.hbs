@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row pt-1 mt-1 mr-1">
+        <form action="/productos/update/{{producto._id}}?_method=PUT" method="POST" enctype="multipart/form-data" class="container pt-1 mt-3 mr-1">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="row form-group justify-content-center text-center">
+                <div class="form-row formulario">
+                    <div class="col-12 card-header mb-2">
+                        <h1>Editar producto</h1>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input name="nombre" type="text" class="form-control" placeholder="Nombre" 
+                                value="{{producto.nombre}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input name="descripcion" type="text" class="form-control" placeholder="Descripción"
+                                value="{{producto.descripcion}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="modelo" type="text" class="form-control" placeholder="Modelo"
+                                value="{{producto.modelo}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input name="precio" type="number" class="form-control" placeholder="Precio (1,10)" step="0.01"
+                                value="{{producto.precio}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="imagen" type="file" class="form-control" placeholder="imagen" required>
+                        </div>
+                        <div class="form-group">
+                            <input name="nombre_prov" type="text" class="form-control" placeholder="Nombre del proveedor"
+                                value="{{producto.proveedor.nombre}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input name="direccion_prov" type="text" class="form-control" placeholder="Dirección del proveedor" 
+                                value="{{producto.proveedor.direccion}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input name="email_prov" type="email" class="form-control" placeholder="email del proveedor"
+                                value="{{producto.proveedor.email}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="telefono_prov" type="tel" class="form-control" placeholder="Telefono del proveedor" minlength="8" maxlength="8"
+                                value="{{producto.proveedor.telefono}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input name="nombre_cat" type="text" class="form-control" placeholder="Nombre categoria"
+                                value="{{producto.categoria.nombre}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="descripcion_cat" type="text" class="form-control" placeholder="Descripción categoria"
+                                value="{{producto.categoria.descripcion}}">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                    <a href="/productos" class="btn btn-danger btn-block">Cancelar</a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
